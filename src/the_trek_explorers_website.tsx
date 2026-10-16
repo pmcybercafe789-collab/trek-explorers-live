@@ -136,7 +136,7 @@ const SERVICES_DATA = [
     accent: "from-teal-700 to-emerald-950",
     badge: "Monsoon Hit",
     image:
-      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=900&q=8",
   },
 ];
 
@@ -435,17 +435,17 @@ export default function App() {
       className="min-h-screen bg-stone-950 text-stone-100 selection:bg-emerald-500 selection:text-stone-950 scroll-smooth overflow-x-hidden"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
+      {}
       {/* 1. TOP BAR & FIXED NAVIGATION */}
       <header className="fixed top-0 left-0 right-0 z-50 w-full shadow-2xl">
-        {/* Urgent Monsoon Batch Ticker Banner */}
-        <div className="bg-gradient-to-r from-amber-900 via-emerald-800 to-amber-900 text-white border-b border-emerald-500/30 px-2.5 py-1.5 sm:px-3 sm:py-2 text-center text-[11px] sm:text-sm font-semibold tracking-wide">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4">
-            <span className="inline-flex items-center gap-1 animate-pulse bg-amber-950/90 border border-amber-400/40 text-amber-200 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] uppercase font-bold shrink-0">
-              <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />{" "}
-              Live Batches
+        {/* Compact Urgent Monsoon Batch Ticker Banner */}
+        <div className="bg-gradient-to-r from-amber-900 via-emerald-800 to-amber-900 text-white border-b border-emerald-500/30 px-2 py-1 text-center text-xs font-semibold tracking-wide">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 sm:gap-3">
+            <span className="inline-flex items-center gap-1 bg-amber-950/90 border border-amber-400/40 text-amber-200 px-1.5 py-0.5 rounded-full text-[10px] uppercase font-bold shrink-0">
+              <Flame className="w-3 h-3 text-amber-400" /> Live Batches
             </span>
-            <span className="leading-tight">
-              🚨 Upcoming Batches: Fri &amp; Sat Departures - Book Now!
+            <span className="leading-tight truncate max-w-[210px] xs:max-w-none sm:max-w-none">
+              🚨 Fri &amp; Sat Departures - Book Now!
             </span>
             <a
               href={getWhatsAppUrl(
@@ -453,32 +453,32 @@ export default function App() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-sky-400 text-sky-300 hover:text-white font-bold inline-flex items-center gap-1 shrink-0"
+              className="underline decoration-sky-400 text-sky-300 hover:text-white font-bold inline-flex items-center gap-0.5 shrink-0"
             >
-              Reserve Seat <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              Reserve <ArrowRight className="w-3 h-3" />
             </a>
           </div>
         </div>
 
-        {/* Main Navigation Bar */}
+        {/* Streamlined Main Navigation Bar */}
         <nav className="bg-stone-950/95 backdrop-blur-xl border-b border-emerald-900/60">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-12 sm:h-16 flex items-center justify-between">
             {/* Brand Logo */}
             <a
               href="#home"
-              className="flex items-center gap-2.5 sm:gap-3 group min-w-0"
+              className="flex items-center gap-2 sm:gap-3 group min-w-0"
             >
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-700 to-amber-900 flex items-center justify-center shadow-lg shadow-emerald-900/50 border border-emerald-400/30 group-hover:scale-105 transition-transform shrink-0">
-                <Mountain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-700 to-amber-900 flex items-center justify-center shadow-lg shadow-emerald-900/50 border border-emerald-400/30 group-hover:scale-105 transition-transform shrink-0">
+                <Mountain className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <div className="truncate">
                 <span
-                  className="block text-base sm:text-xl font-black tracking-tight text-white uppercase leading-none truncate"
+                  className="block text-sm sm:text-lg font-black tracking-tight text-white uppercase leading-none truncate"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   The Trek <span className="text-emerald-400">Explorers</span>
                 </span>
-                <span className="block text-[10px] sm:text-[11px] text-sky-400 font-semibold tracking-widest uppercase mt-0.5">
+                <span className="block text-[9px] sm:text-[10px] text-sky-400 font-semibold tracking-widest uppercase mt-0.5">
                   Mumbai • Sahyadri Crew
                 </span>
               </div>
@@ -532,7 +532,7 @@ export default function App() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-emerald-400/30 shadow-lg shadow-emerald-950/60 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm px-3.5 py-2 rounded-xl border border-emerald-400/30 shadow-lg shadow-emerald-950/60 transition-all hover:-translate-y-0.5"
               >
                 <MessageCircle className="w-4 h-4 text-sky-300" />
                 <span>9322296419</span>
@@ -542,20 +542,20 @@ export default function App() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-stone-900 border border-stone-800 text-stone-200 hover:text-emerald-400 shrink-0"
+              className="lg:hidden p-1.5 rounded-lg bg-stone-900 border border-stone-800 text-stone-200 hover:text-emerald-400 shrink-0"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 sm:w-6 sm:h-6" />
+                <X className="w-5 h-5" />
               ) : (
-                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Menu className="w-5 h-5" />
               )}
             </button>
           </div>
 
           {/* Mobile Drawer */}
           {mobileMenuOpen && (
-            <div className="lg:hidden bg-stone-950/98 border-b border-emerald-900/60 px-4 pt-2 pb-5 space-y-2 max-h-[80vh] overflow-y-auto">
+            <div className="lg:hidden bg-stone-950/98 border-b border-emerald-900/60 px-4 pt-2 pb-4 space-y-1.5 max-h-[75vh] overflow-y-auto">
               {[
                 { label: "Home", href: "#home" },
                 { label: "About", href: "#about" },
@@ -591,7 +591,7 @@ export default function App() {
       {/* 2. HERO SECTION */}
       <section
         id="home"
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-36 sm:pb-24"
+        className="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24"
       >
         {/* Background Image representing 60-person Summit Group / Ratangad Yellow Flowers */}
         <div
@@ -986,8 +986,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Masonry / Bento Grid - Responsive Flex Layout preventing any text overlap */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {}
+        {/* Masonry / Bento Grid - Vertical Poster Cards on Mobile with Zero Overlap */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDestinations.map((dest) => (
             <div
               key={dest.id}
@@ -995,7 +996,7 @@ export default function App() {
                 dest.featured
                   ? "border-amber-400/70 shadow-2xl shadow-amber-950/50"
                   : "border-emerald-800/50"
-              } bg-stone-900 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] ${dest.span}`}
+              } bg-stone-950 min-h-[75vh] sm:min-h-[500px] flex flex-col justify-end p-6 ${dest.span}`}
             >
               {/* Background Image */}
               <img
@@ -1003,70 +1004,70 @@ export default function App() {
                 alt={dest.name}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-stone-950/30" />
+              {/* Strong Dark Gradient Overlay for Maximum Text Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black/90" />
 
-              {/* Top Badges - In natural flex flow so they never collide with bottom content */}
-              <div className="relative z-10 p-4 sm:p-6 flex flex-wrap items-start justify-between gap-2">
-                <span
-                  className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wide shadow-lg leading-tight ${
-                    dest.featured
-                      ? "bg-gradient-to-r from-amber-500 to-amber-700 text-stone-950"
-                      : "bg-emerald-900/95 text-emerald-200 border border-emerald-500/40"
-                  }`}
-                >
-                  {dest.specialBadge}
-                </span>
+              {/* Bottom-Aligned Card Content Stack */}
+              <div className="relative z-10 w-full">
+                {/* All Badges & Tags Grouped Naturally Above Title */}
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wide shadow-md ${
+                      dest.featured
+                        ? "bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950"
+                        : "bg-emerald-900/95 text-emerald-200 border border-emerald-500/40"
+                    }`}
+                  >
+                    {dest.specialBadge}
+                  </span>
 
-                <span className="px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-stone-950/90 text-sky-300 border border-sky-500/30 shrink-0">
-                  ⛰️ {dest.altitude}
-                </span>
-              </div>
+                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-black/80 text-sky-300 border border-sky-500/40">
+                    ⛰️ {dest.altitude}
+                  </span>
 
-              {/* Card Content - Pushed cleanly to bottom with guaranteed spacing */}
-              <div className="relative z-10 p-4 sm:p-6 lg:p-8 pt-6 mt-auto">
-                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs text-stone-300 mb-2">
-                  <span className="inline-flex items-center gap-1 text-amber-300 font-semibold">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-black/80 text-amber-300 border border-amber-500/30">
                     <MapPin className="w-3.5 h-3.5 shrink-0" /> {dest.location}
                   </span>
-                  <span className="hidden sm:inline">•</span>
-                  <span className="inline-flex items-center gap-1 text-sky-300 font-semibold">
+
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-black/80 text-emerald-300 border border-emerald-500/30">
                     <Calendar className="w-3.5 h-3.5 shrink-0" />{" "}
                     {dest.nextBatch}
                   </span>
                 </div>
 
+                {/* Destination Title */}
                 <h3
                   className={`${
                     dest.featured
-                      ? "text-xl sm:text-3xl lg:text-4xl"
-                      : "text-lg sm:text-2xl"
-                  } font-black uppercase text-white tracking-tight leading-snug`}
+                      ? "text-2xl sm:text-3xl lg:text-4xl"
+                      : "text-2xl sm:text-2xl"
+                  } font-black uppercase text-white tracking-tight leading-tight drop-shadow-md mt-1`}
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {dest.name}
                 </h3>
 
                 {/* Highlights list */}
-                <ul className="mt-2.5 sm:mt-3 space-y-1.5">
+                <ul className="mt-3 space-y-1.5">
                   {dest.highlights.slice(0, dest.featured ? 3 : 2).map((h) => (
                     <li
                       key={h}
-                      className="text-xs text-stone-200 flex items-start gap-2 leading-snug"
+                      className="text-xs sm:text-sm text-stone-100 flex items-start gap-2 leading-snug drop-shadow"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Price & Action Footer */}
-                <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
+                <div className="mt-5 pt-4 border-t border-white/20 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-400 block">
+                    <span className="text-[11px] uppercase tracking-wider text-stone-300 block">
                       All-Inclusive Package
                     </span>
                     <span
-                      className="text-xl sm:text-2xl font-black text-emerald-400"
+                      className="text-2xl font-black text-emerald-400"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {dest.price}
@@ -1076,7 +1077,7 @@ export default function App() {
                   <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                     <button
                       onClick={() => setSelectedDestination(dest)}
-                      className="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors text-center"
+                      className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white text-xs font-bold transition-colors text-center"
                     >
                       Details
                     </button>
