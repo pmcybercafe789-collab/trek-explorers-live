@@ -16,6 +16,7 @@ import {
   Flame,
   Sparkles,
   Phone,
+  Instagram,
   MessageCircle,
   ArrowRight,
   Play,
@@ -431,19 +432,20 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen bg-stone-950 text-stone-100 selection:bg-emerald-500 selection:text-stone-950 scroll-smooth"
+      className="min-h-screen bg-stone-950 text-stone-100 selection:bg-emerald-500 selection:text-stone-950 scroll-smooth overflow-x-hidden"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
-      {/* 1. TOP BAR & STICKY NAVIGATION */}
-      <header className="sticky top-0 z-50 w-full shadow-2xl">
+      {/* 1. TOP BAR & FIXED NAVIGATION */}
+      <header className="fixed top-0 left-0 right-0 z-50 w-full shadow-2xl">
         {/* Urgent Monsoon Batch Ticker Banner */}
-        <div className="bg-gradient-to-r from-amber-900 via-emerald-800 to-amber-900 text-white border-b border-emerald-500/30 px-3 py-2 text-center text-xs sm:text-sm font-semibold tracking-wide">
-          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-            <span className="inline-flex items-center gap-1.5 animate-pulse bg-amber-950/80 border border-amber-400/40 text-amber-200 px-2.5 py-0.5 rounded-full text-[11px] uppercase font-bold">
-              <Flame className="w-3.5 h-3.5 text-amber-400" /> Live Batches
+        <div className="bg-gradient-to-r from-amber-900 via-emerald-800 to-amber-900 text-white border-b border-emerald-500/30 px-2.5 py-1.5 sm:px-3 sm:py-2 text-center text-[11px] sm:text-sm font-semibold tracking-wide">
+          <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1 sm:gap-4">
+            <span className="inline-flex items-center gap-1 animate-pulse bg-amber-950/90 border border-amber-400/40 text-amber-200 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] uppercase font-bold shrink-0">
+              <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />{" "}
+              Live Batches
             </span>
-            <span>
-              🚨 Upcoming Batches: Friday &amp; Saturday Departures - Book Now!
+            <span className="leading-tight">
+              🚨 Upcoming Batches: Fri &amp; Sat Departures - Book Now!
             </span>
             <a
               href={getWhatsAppUrl(
@@ -451,29 +453,32 @@ export default function App() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-sky-400 text-sky-300 hover:text-white font-bold inline-flex items-center gap-1"
+              className="underline decoration-sky-400 text-sky-300 hover:text-white font-bold inline-flex items-center gap-1 shrink-0"
             >
-              Reserve Seat <ArrowRight className="w-3.5 h-3.5" />
+              Reserve Seat <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </a>
           </div>
         </div>
 
         {/* Main Navigation Bar */}
-        <nav className="bg-stone-950/90 backdrop-blur-xl border-b border-emerald-900/60">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <nav className="bg-stone-950/95 backdrop-blur-xl border-b border-emerald-900/60">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
             {/* Brand Logo */}
-            <a href="#home" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-700 to-amber-900 flex items-center justify-center shadow-lg shadow-emerald-900/50 border border-emerald-400/30 group-hover:scale-105 transition-transform">
-                <Mountain className="w-6 h-6 text-white" />
+            <a
+              href="#home"
+              className="flex items-center gap-2.5 sm:gap-3 group min-w-0"
+            >
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-700 to-amber-900 flex items-center justify-center shadow-lg shadow-emerald-900/50 border border-emerald-400/30 group-hover:scale-105 transition-transform shrink-0">
+                <Mountain className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
-              <div>
+              <div className="truncate">
                 <span
-                  className="block text-lg sm:text-xl font-black tracking-tight text-white uppercase leading-none"
+                  className="block text-base sm:text-xl font-black tracking-tight text-white uppercase leading-none truncate"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   The Trek <span className="text-emerald-400">Explorers</span>
                 </span>
-                <span className="block text-[11px] text-sky-400 font-semibold tracking-widest uppercase mt-0.5">
+                <span className="block text-[10px] sm:text-[11px] text-sky-400 font-semibold tracking-widest uppercase mt-0.5">
                   Mumbai • Sahyadri Crew
                 </span>
               </div>
@@ -537,20 +542,20 @@ export default function App() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl bg-stone-900 border border-stone-800 text-stone-200 hover:text-emerald-400"
+              className="lg:hidden p-2 rounded-xl bg-stone-900 border border-stone-800 text-stone-200 hover:text-emerald-400 shrink-0"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               )}
             </button>
           </div>
 
           {/* Mobile Drawer */}
           {mobileMenuOpen && (
-            <div className="lg:hidden bg-stone-950/98 border-b border-emerald-900/60 px-4 pt-3 pb-6 space-y-3">
+            <div className="lg:hidden bg-stone-950/98 border-b border-emerald-900/60 px-4 pt-2 pb-5 space-y-2 max-h-[80vh] overflow-y-auto">
               {[
                 { label: "Home", href: "#home" },
                 { label: "About", href: "#about" },
@@ -563,7 +568,7 @@ export default function App() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2.5 px-3 rounded-lg text-base font-semibold text-stone-200 hover:bg-emerald-950/60 hover:text-emerald-400"
+                  className="block py-2 px-3 rounded-lg text-sm font-semibold text-stone-200 hover:bg-emerald-950/60 hover:text-emerald-400"
                 >
                   {link.label}
                 </a>
@@ -574,7 +579,7 @@ export default function App() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-2 inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl"
+                className="w-full mt-2 inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-sm"
               >
                 <Phone className="w-4 h-4" /> WhatsApp 9322296419
               </a>
@@ -583,11 +588,10 @@ export default function App() {
         </nav>
       </header>
 
-      {}
       {/* 2. HERO SECTION */}
       <section
         id="home"
-        className="relative min-h-[88vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-36 sm:pb-24"
       >
         {/* Background Image representing 60-person Summit Group / Ratangad Yellow Flowers */}
         <div
@@ -598,22 +602,21 @@ export default function App() {
           }}
         />
         {/* Layered Monsoon Adventure Overlays (Sahyadri Green + Mud Brown + Dark Vignette) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/85 via-emerald-950/75 to-stone-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-emerald-950/75 to-stone-950" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.18),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(120,53,15,0.35),transparent_55%)]" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Top Pill Badge */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/70 border border-emerald-400/40 text-emerald-200 text-xs sm:text-sm font-semibold mb-6 shadow-lg">
-            <Sparkles className="w-4 h-4 text-sky-400" />
-            <span>
-              60+ Trek Fam Group Batches • Kalsubai Summit &amp; Ratangad Flower
-              Trails
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 rounded-full bg-emerald-900/70 border border-emerald-400/40 text-emerald-200 text-[11px] sm:text-sm font-semibold mb-5 sm:mb-6 shadow-lg max-w-full">
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400 shrink-0" />
+            <span className="leading-snug">
+              60+ Trek Fam Group Batches • Kalsubai &amp; Ratangad Trails
             </span>
           </div>
 
           {/* Sub-Headline */}
           <p
-            className="text-sky-400 font-extrabold tracking-[0.28em] text-xs sm:text-base uppercase mb-4"
+            className="text-sky-400 font-extrabold tracking-[0.2em] sm:tracking-[0.28em] text-xs sm:text-base uppercase mb-3 sm:mb-4"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             EXPLORE • TREK • BELONG
@@ -621,7 +624,7 @@ export default function App() {
 
           {/* Main Bold Uppercase Headline */}
           <h1
-            className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.06] drop-shadow-2xl max-w-4xl mx-auto"
+            className="text-3xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.1] sm:leading-[1.06] drop-shadow-2xl max-w-4xl mx-auto"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Mumbai&apos;s Best{" "}
@@ -631,7 +634,7 @@ export default function App() {
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-base sm:text-xl text-stone-200 max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-xl text-stone-200 max-w-2xl mx-auto font-normal leading-relaxed px-1">
             Every Weekend Curated Trips &amp; Treks from Mumbai.{" "}
             <span className="text-amber-300 font-semibold">
               Strangers Turn Into Trek Fam.
@@ -639,30 +642,30 @@ export default function App() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
               href="#destinations"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide shadow-xl shadow-emerald-950/80 border border-emerald-400/40 transition-all hover:-translate-y-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-600 text-white font-extrabold text-sm sm:text-base tracking-wide shadow-xl shadow-emerald-950/80 border border-emerald-400/40 transition-all hover:-translate-y-1"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <span>Book Your Weekend Trek</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
 
             <a
               href="https://wa.me/919322296419?text=Hi%20The%20Trek%20Explorers!%20I%20want%20to%20join%20an%20upcoming%20weekend%20trek%20from%20Mumbai."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-base border-2 border-white/70 hover:border-sky-400 transition-all hover:-translate-y-1"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold text-sm sm:text-base border-2 border-white/70 hover:border-sky-400 transition-all hover:-translate-y-1"
             >
-              <Phone className="w-5 h-5 text-sky-400" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400" />
               <span>WhatsApp 9322296419</span>
             </a>
           </div>
 
           {/* Quick Pickup Tags */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-2 text-xs text-stone-300">
-            <span className="text-stone-400 font-semibold uppercase tracking-wider mr-1">
+          <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-stone-300">
+            <span className="w-full sm:w-auto text-stone-400 font-semibold uppercase tracking-wider mb-1 sm:mb-0 sm:mr-1">
               AC Bus Pickups:
             </span>
             {[
@@ -676,7 +679,7 @@ export default function App() {
             ].map((stop) => (
               <span
                 key={stop}
-                className="px-3 py-1 rounded-full bg-stone-900/80 border border-stone-700/80 text-stone-200"
+                className="px-2.5 py-1 rounded-full bg-stone-900/80 border border-stone-700/80 text-stone-200"
               >
                 📍 {stop}
               </span>
@@ -685,30 +688,31 @@ export default function App() {
         </div>
       </section>
 
-      {}
       {/* 3. IMPACT / STATS BANNER */}
-      <section className="relative z-20 -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-emerald-900 via-stone-900 to-amber-950 border border-emerald-500/30 shadow-2xl p-6 sm:p-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-emerald-700/40">
+      <section className="relative z-20 -mt-6 sm:-mt-8 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-emerald-900 via-stone-900 to-amber-950 border border-emerald-500/30 shadow-2xl p-4 sm:p-6 lg:p-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
             {STATS_DATA.map((stat, idx) => {
               const IconComp = stat.icon;
               return (
                 <div
                   key={stat.id}
-                  className={`flex flex-col items-center text-center ${
-                    idx !== 0 ? "pt-4 md:pt-0 md:pl-4" : ""
-                  } ${idx === 4 ? "col-span-2 md:col-span-1" : ""}`}
+                  className={`flex flex-col items-center text-center p-2.5 sm:p-3 rounded-xl bg-stone-950/35 lg:bg-transparent border border-emerald-800/30 lg:border-0 ${
+                    idx === 4 ? "col-span-2 sm:col-span-1" : ""
+                  }`}
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-800/60 border border-sky-400/30 flex items-center justify-center mb-3 text-sky-400 shadow-inner">
-                    <IconComp className="w-6 h-6" />
+                  <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-emerald-800/60 border border-sky-400/30 flex items-center justify-center mb-2 text-sky-400 shadow-inner shrink-0">
+                    <IconComp className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <h3
-                    className="text-lg sm:text-xl font-black text-white tracking-tight"
+                    className="text-xs sm:text-base lg:text-lg font-black text-white tracking-tight leading-snug"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
                     {stat.label}
                   </h3>
-                  <p className="text-xs text-emerald-200/80 mt-1">{stat.sub}</p>
+                  <p className="text-[10px] sm:text-xs text-emerald-200/80 mt-0.5 leading-tight">
+                    {stat.sub}
+                  </p>
                 </div>
               );
             })}
@@ -716,21 +720,20 @@ export default function App() {
         </div>
       </section>
 
-      {}
       {/* 4. ABOUT US */}
       <section
         id="about"
-        className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="py-16 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Text Column */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-900/50 border border-amber-600/40 text-amber-300 text-xs font-bold uppercase tracking-widest">
               <Compass className="w-4 h-4 text-sky-400" /> Our Community Story
             </div>
 
             <h2
-              className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight"
+              className="text-2xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               More Than{" "}
@@ -739,7 +742,7 @@ export default function App() {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-stone-300 leading-relaxed">
+            <p className="text-sm sm:text-lg text-stone-300 leading-relaxed">
               We are <strong className="text-white">The Trek Explorers</strong>,
               Mumbai&apos;s most loved trekking community. For 4 years,
               we&apos;ve been exploring Sahyadri&apos;s jungles, forts,
@@ -749,9 +752,9 @@ export default function App() {
             </p>
 
             {/* Vibe Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2">
               <div className="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-800/60">
-                <Music className="w-6 h-6 text-sky-400 mb-2" />
+                <Music className="w-5 h-5 sm:w-6 sm:h-6 text-sky-400 mb-2" />
                 <h4 className="font-bold text-white text-sm">DJ Bus Parties</h4>
                 <p className="text-xs text-stone-400 mt-1">
                   Non-stop ice-breakers, antakshari &amp; dance right from
@@ -759,7 +762,7 @@ export default function App() {
                 </p>
               </div>
               <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-800/60">
-                <Waves className="w-6 h-6 text-amber-400 mb-2" />
+                <Waves className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 mb-2" />
                 <h4 className="font-bold text-white text-sm">
                   Waterfall Jumps
                 </h4>
@@ -769,7 +772,7 @@ export default function App() {
                 </p>
               </div>
               <div className="p-4 rounded-2xl bg-emerald-950/50 border border-emerald-800/60">
-                <Users className="w-6 h-6 text-emerald-400 mb-2" />
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 mb-2" />
                 <h4 className="font-bold text-white text-sm">
                   Solo-Traveler Safe
                 </h4>
@@ -782,9 +785,9 @@ export default function App() {
           </div>
 
           {/* Visual Collage Column */}
-          <div className="lg:col-span-6 grid grid-cols-2 gap-4 relative">
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 relative">
             <div className="space-y-4">
-              <div className="relative rounded-3xl overflow-hidden border border-emerald-700/40 shadow-xl h-64">
+              <div className="relative rounded-3xl overflow-hidden border border-emerald-700/40 shadow-xl h-56 sm:h-64">
                 <img
                   src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=800&q=80"
                   alt="Sahyadri Summit Pose"
@@ -801,7 +804,7 @@ export default function App() {
               </div>
               <div className="p-5 rounded-3xl bg-gradient-to-br from-amber-800 to-amber-950 border border-amber-600/40 text-white shadow-xl">
                 <p
-                  className="text-2xl font-black uppercase"
+                  className="text-xl sm:text-2xl font-black uppercase"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   60+ Trekkers
@@ -813,10 +816,10 @@ export default function App() {
               </div>
             </div>
 
-            <div className="space-y-4 pt-6">
+            <div className="space-y-4 sm:pt-6">
               <div className="p-5 rounded-3xl bg-gradient-to-br from-emerald-700 to-emerald-950 border border-emerald-500/40 text-white shadow-xl">
                 <p
-                  className="text-2xl font-black uppercase"
+                  className="text-xl sm:text-2xl font-black uppercase"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   4.9★ Rated
@@ -826,7 +829,7 @@ export default function App() {
                   College batches.
                 </p>
               </div>
-              <div className="relative rounded-3xl overflow-hidden border border-emerald-700/40 shadow-xl h-64">
+              <div className="relative rounded-3xl overflow-hidden border border-emerald-700/40 shadow-xl h-56 sm:h-64">
                 <img
                   src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80"
                   alt="Monsoon Waterfall Plunge"
@@ -846,26 +849,25 @@ export default function App() {
         </div>
       </section>
 
-      {}
       {/* 5. WHAT WE DO (4 SERVICE CARDS GRID) */}
       <section
         id="services"
-        className="py-20 bg-gradient-to-b from-stone-950 via-emerald-950/30 to-stone-950 border-y border-emerald-900/40"
+        className="py-16 sm:py-20 bg-gradient-to-b from-stone-950 via-emerald-950/30 to-stone-950 border-y border-emerald-900/40"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <span className="text-sky-400 font-bold uppercase tracking-widest text-xs">
               What We Do
             </span>
             <h2
-              className="mt-2 text-3xl sm:text-5xl font-black uppercase text-white tracking-tight"
+              className="mt-2 text-2xl sm:text-5xl font-black uppercase text-white tracking-tight"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Curated{" "}
               <span className="text-emerald-400">Sahyadri &amp; Pan-India</span>{" "}
               Experiences
             </h2>
-            <p className="mt-3 text-stone-400 text-sm sm:text-base">
+            <p className="mt-3 text-stone-400 text-xs sm:text-base">
               From high-energy weekend fort treks to full-scale college IVs and
               corporate offsites.
             </p>
@@ -899,12 +901,12 @@ export default function App() {
                     </div>
 
                     {/* Card Body */}
-                    <div className="p-6">
+                    <div className="p-5 sm:p-6">
                       <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
                         {service.tagline}
                       </p>
                       <h3
-                        className="mt-1 text-xl font-black text-white uppercase"
+                        className="mt-1 text-lg sm:text-xl font-black text-white uppercase"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {service.title}
@@ -928,7 +930,7 @@ export default function App() {
                   </div>
 
                   {/* Card Footer CTA */}
-                  <div className="px-6 pb-6">
+                  <div className="px-5 pb-5 sm:px-6 sm:pb-6">
                     <a
                       href={getWhatsAppUrl(
                         `Hi The Trek Explorers! I would like to enquire about ${service.title} (${service.tagline}).`,
@@ -948,19 +950,18 @@ export default function App() {
         </div>
       </section>
 
-      {}
       {/* 6. POPULAR DESTINATIONS (MASONRY / BENTO GRID) */}
       <section
         id="destinations"
-        className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="py-16 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-5">
           <div>
             <span className="text-sky-400 font-bold uppercase tracking-widest text-xs">
               Weekend Departures from Mumbai
             </span>
             <h2
-              className="mt-2 text-3xl sm:text-5xl font-black uppercase text-white tracking-tight"
+              className="mt-2 text-2xl sm:text-5xl font-black uppercase text-white tracking-tight"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Popular <span className="text-emerald-400">Destinations</span>
@@ -973,7 +974,7 @@ export default function App() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
                   selectedCategory === cat
                     ? "bg-emerald-700 text-white shadow-lg shadow-emerald-900/50 border border-emerald-400/50"
                     : "bg-stone-900 text-stone-400 hover:text-white border border-stone-800"
@@ -985,8 +986,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Masonry / Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(320px,auto)]">
+        {/* Masonry / Bento Grid - Responsive Flex Layout preventing any text overlap */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredDestinations.map((dest) => (
             <div
               key={dest.id}
@@ -994,7 +995,7 @@ export default function App() {
                 dest.featured
                   ? "border-amber-400/70 shadow-2xl shadow-amber-950/50"
                   : "border-emerald-800/50"
-              } bg-stone-900 flex flex-col justify-end ${dest.span}`}
+              } bg-stone-900 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] ${dest.span}`}
             >
               {/* Background Image */}
               <img
@@ -1002,79 +1003,80 @@ export default function App() {
                 alt={dest.name}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/65 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-stone-950/30" />
 
-              {/* Top Badges */}
-              <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 z-10">
+              {/* Top Badges - In natural flex flow so they never collide with bottom content */}
+              <div className="relative z-10 p-4 sm:p-6 flex flex-wrap items-start justify-between gap-2">
                 <span
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wide shadow-lg ${
+                  className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold uppercase tracking-wide shadow-lg leading-tight ${
                     dest.featured
-                      ? "bg-gradient-to-r from-amber-500 to-amber-700 text-stone-950 animate-pulse"
-                      : "bg-emerald-900/90 text-emerald-200 border border-emerald-500/40"
+                      ? "bg-gradient-to-r from-amber-500 to-amber-700 text-stone-950"
+                      : "bg-emerald-900/95 text-emerald-200 border border-emerald-500/40"
                   }`}
                 >
                   {dest.specialBadge}
                 </span>
 
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-stone-950/85 text-sky-300 border border-sky-500/30">
-                  {dest.altitude}
+                <span className="px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-stone-950/90 text-sky-300 border border-sky-500/30 shrink-0">
+                  ⛰️ {dest.altitude}
                 </span>
               </div>
 
-              {/* Card Content */}
-              <div className="relative z-10 p-6 sm:p-8">
-                <div className="flex flex-wrap items-center gap-3 text-xs text-stone-300 mb-2">
+              {/* Card Content - Pushed cleanly to bottom with guaranteed spacing */}
+              <div className="relative z-10 p-4 sm:p-6 lg:p-8 pt-6 mt-auto">
+                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs text-stone-300 mb-2">
                   <span className="inline-flex items-center gap-1 text-amber-300 font-semibold">
-                    <MapPin className="w-3.5 h-3.5" /> {dest.location}
+                    <MapPin className="w-3.5 h-3.5 shrink-0" /> {dest.location}
                   </span>
-                  <span>•</span>
+                  <span className="hidden sm:inline">•</span>
                   <span className="inline-flex items-center gap-1 text-sky-300 font-semibold">
-                    <Calendar className="w-3.5 h-3.5" /> {dest.nextBatch}
+                    <Calendar className="w-3.5 h-3.5 shrink-0" />{" "}
+                    {dest.nextBatch}
                   </span>
                 </div>
 
                 <h3
                   className={`${
                     dest.featured
-                      ? "text-2xl sm:text-4xl"
-                      : "text-xl sm:text-2xl"
-                  } font-black uppercase text-white tracking-tight`}
+                      ? "text-xl sm:text-3xl lg:text-4xl"
+                      : "text-lg sm:text-2xl"
+                  } font-black uppercase text-white tracking-tight leading-snug`}
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   {dest.name}
                 </h3>
 
                 {/* Highlights list */}
-                <ul className="mt-3 space-y-1">
+                <ul className="mt-2.5 sm:mt-3 space-y-1.5">
                   {dest.highlights.slice(0, dest.featured ? 3 : 2).map((h) => (
                     <li
                       key={h}
-                      className="text-xs text-stone-300 flex items-center gap-2"
+                      className="text-xs text-stone-200 flex items-start gap-2 leading-snug"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Price & Action Footer */}
-                <div className="mt-5 pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
+                <div className="mt-4 sm:mt-5 pt-3.5 sm:pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <span className="text-[11px] uppercase tracking-wider text-stone-400 block">
+                    <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-stone-400 block">
                       All-Inclusive Package
                     </span>
                     <span
-                      className="text-2xl font-black text-emerald-400"
+                      className="text-xl sm:text-2xl font-black text-emerald-400"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
                       {dest.price}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                     <button
                       onClick={() => setSelectedDestination(dest)}
-                      className="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors"
+                      className="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors text-center"
                     >
                       Details
                     </button>
@@ -1084,10 +1086,10 @@ export default function App() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg transition-colors"
+                      className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg transition-colors"
                     >
                       <span>Book Now</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                     </a>
                   </div>
                 </div>
@@ -1273,6 +1275,7 @@ export default function App() {
               className="p-4 rounded-2xl bg-gradient-to-r from-amber-900/70 via-emerald-900/70 to-sky-900/70 border border-sky-400/30 flex items-center justify-between text-white hover:opacity-95 transition-opacity"
             >
               <div className="flex items-center gap-3">
+                <Instagram className="w-6 h-6 text-sky-300" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-sky-300">
                     Follow the Craze
@@ -1437,6 +1440,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-stone-900 hover:bg-emerald-950 border border-emerald-700/50 text-white font-bold text-sm transition-colors"
               >
+                <Instagram className="w-5 h-5 text-sky-400" />
                 <span>@the.trekexplorers</span>
               </a>
               <p className="mt-3 text-xs text-stone-400">
